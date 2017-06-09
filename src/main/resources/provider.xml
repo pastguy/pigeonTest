@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:pigeon="http://code.dianping.com/schema/pigeon"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+		http://code.dianping.com/schema/pigeon http://code.dianping.com/schema/pigeon/pigeon-service-2.0.xsd">
+	
+	<bean class="com.dianping.pigeon.remoting.provider.config.spring.ServiceBean"
+		init-method="init">
+		<property name="services">
+			<map>
+				<entry key="http://service.ymm.com/demoService/echoService_1.0.0"
+					value-ref="echoServiceImpl" />
+			</map>
+		</property>
+		<property name="port">
+			<value>5008</value>
+		</property>
+	</bean>
+	<bean id="echoServiceImpl" class="ymm.pigeon.service.EchoServiceImpl" />
+
+	<bean id="p1" class="ymm.pigeon.Person">
+		<property name="name">
+			<value>a</value>
+		</property>
+		<property name="age">
+			<value>1</value>
+		</property>
+	</bean>
+	
+	<bean id="SpringSimpleMultiBean" class="ymm.pigeon.SpringSimpleMultiBean">
+	<property name="name">
+			<value>a</value>
+		</property>
+	</bean>
+	
+</beans>

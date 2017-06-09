@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:pigeon="http://code.dianping.com/schema/pigeon"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+		http://code.dianping.com/schema/pigeon http://code.dianping.com/schema/pigeon/pigeon-service-2.0.xsd">
+
+	<bean id="echoService" class="com.dianping.pigeon.remoting.invoker.config.spring.ReferenceBean" init-method="init">
+	    <!-- 服务全局唯一的标识url，默认是服务接口类名，必须设置 -->
+		<property name="url" value="http://service.ymm.com/demoService/echoService_1.0.0" />
+		<!-- 接口名称，必须设置 -->
+		<property name="interfaceName" value="ymm.pigeon.service.EchoService" />
+		<!-- 超时时间，毫秒，默认5000，建议自己设置 -->
+		<property name="timeout" value="2000" />
+		<!-- 序列化，hessian/fst/protostuff，默认hessian，可不设置-->
+		<property name="serialize" value="hessian" />
+		<!-- 调用方式，sync/future/callback/oneway，默认sync，可不设置 -->
+		<property name="callType" value="sync" />
+		<!-- 失败策略，快速失败failfast/失败转移failover/失败忽略failsafe/并发取最快返回forking，默认failfast，可不设置 -->
+		<property name="cluster" value="failfast" />
+		<!-- 是否超时重试，默认false，可不设置 -->
+		<property name="timeoutRetry" value="false" />
+		<!-- 重试次数，默认1，可不设置 -->
+		<property name="retries" value="1" />
+	</bean>
+
+</beans>
