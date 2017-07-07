@@ -25,6 +25,12 @@
 		</dependency>
 
 		<dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+        
+		<dependency>
 			<groupId>com.dianping</groupId>
 			<artifactId>pigeon</artifactId>
 			<version>2.9.11-SNAPSHOT</version>
@@ -58,6 +64,23 @@
 			<artifactId>swift-generator</artifactId>
 			<version>${swift.version}</version>
 		</dependency>
+		<dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.29</version>
+            </dependency>
+        <dependency>
+			    <groupId>org.apache.httpcomponents</groupId>
+			    <artifactId>httpclient</artifactId>
+    			<version>4.3.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.7.3</version>
+		</dependency>
+		
+            
 	</dependencies>
 	
 </project>
