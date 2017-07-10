@@ -1,10 +1,10 @@
 package ymm.ico;
 
-public enum CoinName {
-	EOS("eos"),SNT("snt");
+public enum CoinUnit {
+	CNY("cny"),BTC("btc"),ETH("eth");
 	
 	
-	CoinName(String name){
+	CoinUnit(String name){
 		this.name = name ;
 	}
 	

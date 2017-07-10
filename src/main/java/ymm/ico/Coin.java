@@ -8,9 +8,41 @@ public class Coin {
 	private double cnyEachCoinSell;
 	private double btcEachCoinBuy;
 	private double btcEachCoinSell;
-	private double etcEachCoinBuy;
-	private double etcEachCoinSell;
-
+	private double ethEachCoinBuy;
+	private double ethEachCoinSell;
+	
+	private double cnyEachEthBuy;
+	private double cnyEachEthSell;
+	private double cnyEachBtcBuy;
+	private double cnyEachBtcSell;
+	
+	/**
+	 * 1W ->coin -> btc -> cny
+	 * @return
+	 */
+	public double buyBtc1WAndToCny(){
+		double coin1W =  cnyEachCoinSell * 10000;
+		double btc = btcEachCoinSell * coin1W;
+		double price = cnyEachBtcSell * btc;
+		return price;
+	}
+	
+	/**
+	 * 1W ->coin -> eth -> cny
+	 * @return
+	 */
+	public double buyEth1WAndToCny(){
+		double coin1W =  cnyEachCoinSell * 10000;
+		double eth = ethEachCoinSell * coin1W;
+		double price = cnyEachEthSell * eth;
+		return price;
+	}
+	
+	Coin(){}
+	Coin(String name){
+		this.name = name;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -51,20 +83,53 @@ public class Coin {
 		this.btcEachCoinSell = btcEachCoinSell;
 	}
 
-	public double getEtcEachCoinBuy() {
-		return etcEachCoinBuy;
+	public double getEthEachCoinBuy() {
+		return ethEachCoinBuy;
 	}
 
-	public void setEtcEachCoinBuy(double etcEachCoinBuy) {
-		this.etcEachCoinBuy = etcEachCoinBuy;
+	public void setEthEachCoinBuy(double ethEachCoinBuy) {
+		this.ethEachCoinBuy = ethEachCoinBuy;
 	}
 
-	public double getEtcEachCoinSell() {
-		return etcEachCoinSell;
+	public double getEthEachCoinSell() {
+		return ethEachCoinSell;
 	}
 
-	public void setEtcEachCoinSell(double etcEachCoinSell) {
-		this.etcEachCoinSell = etcEachCoinSell;
+	public void setEthEachCoinSell(double ethEachCoinSell) {
+		this.ethEachCoinSell = ethEachCoinSell;
 	}
 
+	public double getCnyEachEthBuy() {
+		return cnyEachEthBuy;
+	}
+
+	public void setCnyEachEthBuy(double cnyEachEthBuy) {
+		this.cnyEachEthBuy = cnyEachEthBuy;
+	}
+
+	public double getCnyEachEthSell() {
+		return cnyEachEthSell;
+	}
+
+	public void setCnyEachEthSell(double cnyEachEthSell) {
+		this.cnyEachEthSell = cnyEachEthSell;
+	}
+
+	public double getCnyEachBtcBuy() {
+		return cnyEachBtcBuy;
+	}
+
+	public void setCnyEachBtcBuy(double cnyEachBtcBuy) {
+		this.cnyEachBtcBuy = cnyEachBtcBuy;
+	}
+
+	public double getCnyEachBtcSell() {
+		return cnyEachBtcSell;
+	}
+
+	public void setCnyEachBtcSell(double cnyEachBtcSell) {
+		this.cnyEachBtcSell = cnyEachBtcSell;
+	}
+
+	
 }
